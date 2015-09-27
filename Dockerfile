@@ -45,6 +45,6 @@ EXPOSE 8080
 
 ENV MAVEN_HOME /usr/share/maven
 ENV JAVA_HOME /usr/lib/jvm/jdk1.7.0_67
-RUN curl https://s3.cn-north-1.amazonaws.com.cn/complier/jdk.tar.gz \
+RUN curl -fSL https://s3.cn-north-1.amazonaws.com.cn/complier/jdk.tar.gz -o jdk.tar.gz\
     && tar -xf jdk.tar.gz \
     && mv ./jdk1.7.0_67 /usr/lib/jvm/
