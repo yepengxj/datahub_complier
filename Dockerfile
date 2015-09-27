@@ -44,5 +44,7 @@ ENV MAVEN_HOME /usr/share/maven
 EXPOSE 8080
 
 ENV MAVEN_HOME /usr/share/maven
-ENV JAVA_HOME /usr/lib/jvm/jdk7
-COPY jdk7 /usr/lib/jvm/jdk7
+ENV JAVA_HOME /usr/lib/jvm/jdk1.7.0_67
+RUN curl https://s3.cn-north-1.amazonaws.com.cn/complier/jdk.tar.gz \
+    && tar -xf jdk.tar.gz \
+    && mv ./jdk1.7.0_67 /usr/lib/jvm/
